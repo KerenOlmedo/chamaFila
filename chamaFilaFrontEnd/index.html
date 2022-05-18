@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./chamaFila.css">
+  <script src="./axios.js"></script>
 
   <title>Chama Fila</title>
 </head>
@@ -37,36 +38,20 @@
   <div class="d-flex justify-content-center" id="content">
 
     <form>
-      <div class="mb-3">
+      <div class="mb-6">
         <label for="exampleInputEmail1" class="form-label">Nome completo:</label>
-        <input type="text" class="form-control" id="input" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="nome" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Código chama fila:</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="text" class="form-control" id="codigo">
       </div>
-      <button type="submit" class="btn btn-dark">Cadastrar</button>
+      <button onclick="pegarDados()" class="btn btn-dark">Cadastrar</button>
     </form>
-
   </div>
+  <div class="container" id="conteudo"></div>
   <div id="rodape">
-    <p id="title" class="h3">Utilidades</p>
-    <div class="container text-white">
-      <div class="row align-items-center">
-        <div class="col-12 col-md-6">
-          Quem somos?
-        </div>
-        <div class="col-12 col-md-6">
-          contatos
-        </div>
-        <div class="col-12 col-md-6">
-          App
-        </div>
-        <div class="col-12 col-md-6">
-          Redes sociais
-        </div>
-      </div>
-    </div>
+    <p id="title" class="h3">Design by: Kéren Olmedo</p>
   </div>
   <!-- Optional JavaScript; choose one of the two! -->
 
@@ -75,6 +60,21 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
+  <script src="./telaDeCadastro.js"></script>
+  <script>
+    async function data(params) {
+      const config = {
+        method: 'get',
+        url: 'http://localhost:3000/pacientes',
+        headers: { 'Access-Control-Allow-Origin': '*' }
+      }
+
+      const resposta = await axios(config)
+
+      console.log(resposta)
+    }
+    data()
+  </script>
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
