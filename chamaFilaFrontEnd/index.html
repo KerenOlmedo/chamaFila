@@ -69,9 +69,15 @@
         headers: { 'Access-Control-Allow-Origin': '*' }
       }
 
-      const resposta = await axios(config)
+      const {data} = await axios(config)
 
-      console.log(resposta)
+        if (data) {
+          for (const item of data) {
+            const texto = `<div>Nome: ${item.nome} - Código: ${item.codigo}</div>`
+            console.log(item)
+            document.getElementById("conteudo").insertAdjacentHTML('afterend',texto)
+          }
+        }
     }
     data()
   </script>
