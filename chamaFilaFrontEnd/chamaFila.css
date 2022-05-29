@@ -4,22 +4,22 @@ html{
 }
 
 body{
-    background-color: #F8F8FF;
+    background-color: #f8fffb;
     padding: 0%;
     margin: 0%;
 }
 
 #header{
     padding-top: 10px;
-    background-color:#7fe7c9 ;  
+    background-color:#80c29f  ;  
 }
 
 #content{
-    padding-top: 100px;
+    padding-top: 25px;
 }
 
 #rodape{
-    background-color: #7fe7c9;
+    background-color: #80c29f;
     position:absolute;
 	bottom:0;
 	width:100%;
